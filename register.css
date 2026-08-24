@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    
+    min-height: 100vh;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+.register-header{
+height: 80px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid #e4ebe8;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: #172033;
+}
+
+.logo-icon {
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: linear-gradient(135deg, #126b63, #1fb5a4);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(18, 107, 99, 0.20);
+}
+
+.logo strong {
+    display: block;
+    font-size: 17px;
+}
+
+.logo span {
+    display: block;
+    margin-top: 2px;
+    color: #84918e;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+}
+
+.back {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #64736f;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.back:hover {
+    color: #126b63;
+}
+
+.register-container {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 450px;
+    padding: 35px 38px;
+    background: white;
+    border: 1px solid #e1e9e6;
+    border-radius: 20px;
+    box-shadow: 0 25px 60px rgba(20, 60, 55, 0.09);
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #126b63;
+    background: #e8f7f4;
+    border-radius: 14px;
+    font-size: 18px;
+}
+
+.card h1 {
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    font-size: 32px;
+    color: #172d2a;
+}
+
+.description {
+    margin-top: 7px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #84918e;
+    font-size: 12px;
+}
+
+.fg {
+    margin-bottom: 15px;
+}
+
+.fg label {
+    display: block;
+    margin-bottom: 7px;
+    color: #344641;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.box {
+    height: 46px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #dfe7e4;
+    border-radius: 10px;
+    background: #fbfcfc;
+    transition: 0.3s ease;
+}
+
+.box:focus-within {
+    border-color: #63b9b0;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(31, 181, 164, 0.08);
+}
+
+.box > i {
+    width: 42px;
+    text-align: center;
+    color: #96a29f;
+    font-size: 13px;
+}
+
+.box input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #263633;
+    font-size: 12px;
+}
+
+.box input::placeholder {
+    color: #a5afad;
+}
+
+.terms {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 18px 0;
+    color: #71807c;
+    font-size: 10px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.terms input {
+    margin-top: 2px;
+    width: 14px;
+    height: 14px;
+    accent-color: #126b63;
+}
+
+.terms a {
+    color: #126b63;
+    font-weight: 700;
+}
+
+.btn {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    background: linear-gradient(135deg, #126b63, #1a9b8f);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 22px rgba(18, 107, 99, 0.20);
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(18, 107, 99, 0.27);
+}
+
+.btn i {
+    font-size: 10px;
+    transition: 0.3s ease;
+}
+
+.btn:hover i {
+    transform: translateX(4px);
+}
+
+.login-link {
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid #edf1ef;
+    text-align: center;
+    color: #899692;
+    font-size: 10px;
+}
+
+.login-link a {
+    margin-left: 3px;
+    color: #126b63;
+    font-weight: 700;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
