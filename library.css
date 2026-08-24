@@ -75,6 +75,9 @@ height: 100%;
      font-weight: 600;
     border-radius: 8px;
     transition:.25s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .menu:hover,
@@ -87,7 +90,7 @@ height: 100%;
     content:"";
      position: absolute;
     width: 0;
-    height: 3px;
+    height: 2px;
     left: 0;
     bottom: 2px;
      background:#14b8a6;
