@@ -68,6 +68,9 @@ height: 100%;
 }
 
 .menu{
+    display: flex;
+    align-items: center;
+    gap: 5px;
      position: relative;
     padding :9px 11px;
     color:#667672;
@@ -83,22 +86,21 @@ height: 100%;
     background:#edf8f6;
 }
 
-.menu::before{
-    content:"";
-     position: absolute;
-    width: 0;
-    height: 3px;
-    left: 0;
+.menu.current::after{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
     bottom: 2px;
-     background:#14b8a6;
-    border-radius: 5px;
-    transition:.3s ease;
+    background: #126b63;
+    left: 50%;
+    border-radius: 50%;
 }
 
-.menu:hover::before,
-.menu.current::before{
-    width:100%;
-}
+/* .menu:hover::after,
+.menu.current::after{
+    width:70%;
+} */
 
 .auth{
      display: flex;
