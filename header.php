@@ -21,8 +21,8 @@
             <nav class="main">
                 <a href="index.php" class="menu current"><i class="fa-solid fa-house"></i>Home</a>
                 <a href="books.php" class="menu"><i class="fa-solid fa-book"></i>Books</a>
-                <a href="categories.html" class="menu"><i class="fa-solid fa-layer-group"></i>Categories</a>
-                <a href="about.html" class="menu"><i class="fa-solid fa-circle-info"></i>About</a>
+                <a href="categories.php" class="menu"><i class="fa-solid fa-layer-group"></i>Categories</a>
+                <a href="about.php" class="menu"><i class="fa-solid fa-circle-info"></i>About</a>
                 <a href="notices.html" class="menu"><i class="fa-solid fa-bell"></i>Notices</a>
                 <a href="contact.html" class="menu"><i class="fa-solid fa-envelope"></i>Contact</a>
             </nav>
