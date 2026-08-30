@@ -11,27 +11,39 @@
     <header class="header">
         <div class="head">
 
-            <a href="index.html" class="brand">
+            <a href="index.php" class="brand">
                 <div class="brand-content">
                     <strong>Smart Library</strong>
                     <span>Your place to read</span>
                 </div>
             </a>
+<?php
+$currentPage = basename($_SERVER['PHP_SELF']);
+?>
 
-            <nav class="main">
-                <a href="index.php" class="menu current"><i class="fa-solid fa-house"></i>Home</a>
-                <a href="books.php" class="menu"><i class="fa-solid fa-book"></i>Books</a>
-                <a href="categories.php" class="menu"><i class="fa-solid fa-layer-group"></i>Categories</a>
-                <a href="about.php" class="menu"><i class="fa-solid fa-circle-info"></i>About</a>
-                <a href="notices.html" class="menu"><i class="fa-solid fa-bell"></i>Notices</a>
-                <a href="contact.html" class="menu"><i class="fa-solid fa-envelope"></i>Contact</a>
-            </nav>
+<nav class="main"> 
 
+    <a href="index.php" class="menu <?php echo ($currentPage == 'index.php') ? 'current' : ''; ?>">
+        <i class="fa-solid fa-house"></i>Home
+    </a> 
 
+    <a href="services.php" class="menu <?php echo ($currentPage == 'services.php') ? 'current' : ''; ?>">
+        <i class="fa-solid fa-book"></i>Services</a> 
+
+    <a href="categories.php" class="menu <?php echo ($currentPage == 'categories.php') ? 'current' : ''; ?>">
+        <i class="fa-solid fa-layer-group"></i>Categories</a> 
+
+    <a href="about.php" class="menu <?php echo ($currentPage == 'about.php') ? 'current' : ''; ?>">
+        <i class="fa-solid fa-circle-info"></i>About</a> 
+
+    <a href="contact.php" class="menu <?php echo ($currentPage == 'contact.php') ? 'current' : ''; ?>">
+        <i class="fa-solid fa-envelope"></i>Contact</a> 
+ </nav>
+           
             <div class="auth">
-                <a href="login.html" class="signin">Sign in</a>
+                <a href="login.php" class="signin">Sign in</a>
 
-                <a href="register.html" class="join">
+                <a href="register.php" class="join">
                     Join Library
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>

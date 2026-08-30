@@ -14,7 +14,7 @@
 <body>
 
     <header class="register-header">
-        <a href="index.html" class="logo">
+        <a href="index.php" class="logo">
             <div class="logo-icon">
                 <i class="fa-solid fa-book-open"></i>
             </div>
@@ -25,7 +25,7 @@
             </div>
         </a>
 
-        <a href="index.html" class="back">
+        <a href="index.php" class="back">
             <i class="fa-solid fa-arrow-left"></i>
             Back to Home
         </a>
@@ -105,7 +105,7 @@
 
             <div class="login-link">
                 Already have an account?
-                <a href="login.html">Sign In</a>
+                <a href="login.php">Sign In</a>
             </div>
 
         </div>

@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +18,7 @@
 <body>
 
     <header class="login-header">
- <a href="index.html" class="logo">
+ <a href="index.php" class="logo">
      
         <div>
                 <strong>Smart Library</strong>
@@ -19,9 +26,9 @@
          </div>
         </a>
 
-        <a href="index.html" class="back">
+        <a href="index.php" class="back">
             <i class="fa-solid fa-arrow-left"></i>
-            Back to Home
+           <a href=index.php> Back to Home </a>
         </a>
     </header>
 
@@ -70,7 +77,7 @@
                 </label>
 
                 <button type="submit" class="b">
-                    Sign In
+                 Sign In
                     <i class="fa-solid fa-arrow-right"></i>
                 </button>
 
@@ -78,7 +85,7 @@
 
             <div class="register">
                 Don't have an account?
-                <a href="register.html">Create an account</a>
+                <a href="register.php">Create an account</a>
             </div>
 
         </div>

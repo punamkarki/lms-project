@@ -97,13 +97,10 @@ height: 100%;
     bottom: 2px;
     background: #126b63;
     left: 50%;
+    transform: translate(-50%);
     border-radius: 50%;
 }
 
-/* .menu:hover::after,
-.menu.current::after{
-    width:70%;
-} */
 
 .auth{
      display: flex;
