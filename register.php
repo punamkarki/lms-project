@@ -1,3 +1,67 @@
+<?php
+session_start();
+include 'database.php';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name=$_POST['name'];
+    $email=$_POST['email'];
+    $phone=$_POST['phone'];
+    $password=$_POST['password'];
+    $confirm_password=$_POST['confirm_password'];
+    if($name=="" || $email=="" || $phone=="" || $password=="" || $confirm_password=="")
+        {
+        echo "<script>
+                alert('Please fill in all fields!');
+              </script>";
+        }
+        elseif(!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $email))
+         {
+           echo "<script>
+            alert('Please enter a valid email address!');
+          </script>";
+         }
+         elseif(!preg_match("/^[0-9]{10}$/", $phone))
+         {
+          echo "<script>
+                 alert('Please enter a valid 10-digit phone number!');
+                  </script>";
+        }
+        elseif (strlen($password) < 8)
+       {
+         echo "<script>
+                alert('Password must be at least 8 characters long!');
+              </script>";
+        }
+
+      elseif($password!=$confirm_password)
+        {
+       echo "<script>
+                alert('Passwords do not match!');
+              </script>";
+        } 
+     else{
+        $check="SELECT * FROM user WHERE email='$email'";
+        $result=mysqli_query($connection,$check);
+        if(mysqli_num_rows($result)==1){
+            echo "<script>
+            alert('Email already exists!');
+          </script>";
+        }
+        else{
+            $sql="INSERT INTO user(name,email,phone,password) VALUES('$name','$email','$phone','$password')";
+            if(mysqli_query($connection,$sql)){
+                echo"<scipt>
+                alert('Registration successful! You can now log in.');
+                </script>";
+            }
+            else{
+                echo "<script>
+                alert('registration failed! Please try again.');
+                </script>";
+            }  
+        }
+     }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +108,7 @@
                 Join Smart Library and start your reading journey.
             </p>
 
-            <form action="#" method="POST">
+            <form action="register.php" method="POST">
 
                 <div class="fg">
                     <label for="name">Full Name</label>
@@ -87,7 +151,7 @@
 
                     <div class="box">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm your password" autocomplete="new-password" required>
+                        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" autocomplete="new-password" required>
                     </div>
                 </div>
 
@@ -113,7 +177,7 @@
 
     <script>
         const password = document.getElementById("password");
-        const confirmPassword = document.getElementById("confirm-password");
+        const confirmPassword = document.getElementById("confirm_password");
 
         document.querySelector("form").addEventListener("submit", function (e) {
             if (password.value !== confirmPassword.value) {

@@ -1,10 +1,22 @@
-
-
-
-
-
-
-
+<?php
+session_start();
+include 'database.php';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   $email=$_POST['email'];
+   $password=$_POST['password'];
+   $sql="SELECT * FROM user WHERE email='$email' AND password='$password'";
+   $result=mysqli_query($connection,$sql);
+if(mysqli_num_rows($result)==1){
+    $_SESSION['email']=$email;
+    header("Location: dashboard.php");
+}
+else{
+    echo "<script>
+    alert('Invalid email or password');
+    </script>";
+}
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,13 +57,13 @@
                 Sign in to continue to your library account.
             </p>
 
-            <form>
+            <form method="POST" action="login.php">
                 <div class="fg">
                     <label for="email">Email Address</label>
 
                     <div class="box">
                         <i class="fa-regular fa-envelope"></i>
-                        <input type="email" id="email" placeholder="Enter your email" required>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
                     </div>
                 </div>
 
@@ -63,7 +75,7 @@
 
                     <div class="box">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" id="password" placeholder="Enter your password" required>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
                         <button type="button" id="showPassword">
                             <i class="fa-regular fa-eye"></i>
