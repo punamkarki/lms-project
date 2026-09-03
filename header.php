@@ -1,3 +1,6 @@
+<?php
+$currentPage = basename($_SERVER['PHP_SELF']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +20,6 @@
                     <span>Your place to read</span>
                 </div>
             </a>
-<?php
-$currentPage = basename($_SERVER['PHP_SELF']);
-?>
 
 <nav class="main"> 
 
