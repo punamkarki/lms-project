@@ -59,7 +59,7 @@ a {
 }
 
 .back {
-    display: flex;
+     display: flex;
     align-items: center;
     gap: 7px;
     color: #64736f;
@@ -72,34 +72,37 @@ a {
 }
 
 .login-container {
-    min-height: calc(100vh - 80px);
+      min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px 20px;
+    padding: 0 10px;
+    position: relative;
+    top: -30px;
 }
 
 .card {
     width: 100%;
     max-width: 420px;
-    padding: 38px;
+    padding: 20px;
     background: white;
     border: 1px solid #e1e9e6;
     border-radius: 20px;
     box-shadow: 0 25px 60px rgba(20, 60, 55, 0.09);
+    
 }
 
 .icon {
-    width: 52px;
-    height: 52px;
-    margin: 0 auto 18px;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #126b63;
     background: #e8f7f4;
     border-radius: 14px;
-    font-size: 19px;
+    font-size: 18px;
 }
 
 .card h1 {

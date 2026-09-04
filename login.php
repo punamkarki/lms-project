@@ -32,15 +32,18 @@ else{
     <header class="login-header">
  <a href="index.php" class="logo">
      
-        <div>
-                <strong>Smart Library</strong>
-           
-         </div>
-        </a>
+         <div class="logo-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
 
+            <div>
+                <strong>LibraryManage</strong>
+                <span>Smart Library</span>
+            </div>
+  </a>
         <a href="index.php" class="back">
             <i class="fa-solid fa-arrow-left"></i>
-           <a href=index.php> Back to Home </a>
+             Back to Home 
         </a>
     </header>
 

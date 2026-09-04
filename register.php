@@ -84,14 +84,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div>
-                <strong>LibraManage</strong>
+                <strong>LibraryManage</strong>
                 <span>Smart Library</span>
             </div>
         </a>
 
         <a href="index.php" class="back">
-            <i class="fa-solid fa-arrow-left"></i>
-            Back to Home
+          <i class="fa-solid fa-arrow-left"></i>
+           Back to Home
         </a>
     </header>
 
