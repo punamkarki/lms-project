@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
     <header class="register-header">
-        <a href="index.php" class="logo">
+     <a href="index.php" class="logo">
             <div class="logo-icon">
                 <i class="fa-solid fa-book-open"></i>
             </div>
@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <strong>LibraryManage</strong>
                 <span>Smart Library</span>
             </div>
-        </a>
+     </a>
 
         <a href="index.php" class="back">
           <i class="fa-solid fa-arrow-left"></i>

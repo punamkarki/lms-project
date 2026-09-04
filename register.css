@@ -20,7 +20,7 @@ input {
 }
 
 .register-header{
-height: 80px;
+    height: 80px;
     padding: 0 6%;
     display: flex;
     align-items: center;
@@ -28,6 +28,7 @@ height: 80px;
     background: rgba(255, 255, 255, 0.85);
     border-bottom: 1px solid #e4ebe8;
 }
+
 
 .logo {
     display: flex;
@@ -70,6 +71,7 @@ height: 80px;
     color: #64736f;
     font-size: 12px;
     font-weight: 600;
+    text-decoration: none;
 }
 
 .back:hover {
@@ -77,13 +79,13 @@ height: 80px;
 }
 
 .register-container {
-      min-height: calc(100vh - 80px);
+     min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 10px;
     position: relative;
-    top: -50px;
+   top: -30px;
 }
 
 .card {
@@ -94,6 +96,7 @@ height: 80px;
     border: 1px solid #e1e9e6;
     border-radius: 20px;
     box-shadow: 0 25px 60px rgba(20, 60, 55, 0.09);
+  
 }
 
 .icon {
@@ -107,6 +110,7 @@ height: 80px;
     background: #e8f7f4;
     border-radius: 14px;
     font-size: 18px;
+
 }
 
 .card h1 {
