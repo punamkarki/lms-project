@@ -8,7 +8,7 @@ body {
     
     min-height: 100vh;
 
-}
+  }
 
 a {
     text-decoration: none;
@@ -79,13 +79,16 @@ input {
 }
 
 .register-container {
-     min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 10px;
     position: relative;
-   top: -30px;
+    top: -15px;
+
+  
+
 }
 
 .card {
@@ -93,7 +96,7 @@ input {
     max-width: 450px;
     padding: 35px 38px;
     background: white;
-    border: 1px solid #e1e9e6;
+    border: 2px solid #ccd2d0;
     border-radius: 20px;
     box-shadow: 0 25px 60px rgba(20, 60, 55, 0.09);
   
@@ -124,7 +127,7 @@ input {
     margin-top: 7px;
     margin-bottom: 25px;
     text-align: center;
-    color: #84918e;
+    color: #646766;
     font-size: 12px;
 }
 
@@ -144,7 +147,7 @@ input {
     height: 46px;
     display: flex;
     align-items: center;
-    border: 1px solid #dfe7e4;
+    border: 1px solid #a5adaa;
     border-radius: 10px;
     background: #fbfcfc;
     transition: 0.3s ease;
@@ -237,7 +240,7 @@ input {
     padding-top: 20px;
     border-top: 1px solid #edf1ef;
     text-align: center;
-    color: #899692;
+    color: #646766;
     font-size: 10px;
 }
 
