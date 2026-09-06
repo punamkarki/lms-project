@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </script>";
         }
         else{
-            $sql="INSERT INTO user(name,email,phone,password) VALUES('$name','$email','$phone','$password')";
+            $sql="INSERT INTO user(name,email,phone,password,) VALUES('$name','$email','$phone','$password')";
             if(mysqli_query($connection,$sql)){
                 echo"<scipt>
                 alert('Registration successful! You can now log in.');
@@ -70,7 +70,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Create your LibraManage library account">
     <title>Document</title>
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="register.css">
 </head>
@@ -89,8 +88,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
      </a>
 
-        <a href="index.php" class="back">
-          <i class="fa-solid fa-arrow-left"></i>
+         <a href="index.php" class="back">
+         <i class="fa-solid fa-arrow-left"></i>
            Back to Home
         </a>
     </header>
@@ -134,6 +133,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="box">
                         <i class="fa-solid fa-phone"></i>
                         <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" autocomplete="tel" required>
+                    </div>
+                </div>
+                <div class="fg">
+                    <label for="register_as">Register As</label>
+                    <div class="box">
+                        <i class="fa-regular fa-user"></i>
+                        <select id="register_as" name="register_as" required>
+                            <option value="">Select your Role</option>
+                            <option value="student">
+                               <i class="fa-solid fa-user-graduate"></i>
+                                Student
+                            </option>
+                            <option value="librarian">
+                                <i class="fa-solid fa-user-tie"></i>
+                                Librarian
+                            </option>
+                            <option value="teacher">
+                                <i class="fa-solid fa-chalkboard-teacher"></i>
+                                Teacher
+                            </option>
+                        </select>
                     </div>
                 </div>
 

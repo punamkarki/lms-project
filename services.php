@@ -10,8 +10,9 @@
 </head>
 
 <body>
-
-    <!-- Services Header -->
+<?php
+include "header.php"
+?>
     <section class="services-header">
 
         <p class="small-title">WHAT WE OFFER</p>
@@ -27,8 +28,6 @@
 
     </section>
 
-
-    <!-- Services -->
     <section class="services-container">
 
         <div class="service-card">
@@ -92,8 +91,6 @@
 
     </section>
 
-
-    <!-- Bottom Section -->
     <section class="bottom-section">
 
         <h2>Ready to find your next book?</h2>
