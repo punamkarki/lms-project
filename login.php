@@ -1,21 +1,66 @@
 <?php
 session_start();
 include 'database.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   $email=$_POST['email'];
-   $password=$_POST['password'];
-   $sql="SELECT * FROM user WHERE email='$email' AND password='$password'";
-   $result=mysqli_query($connection,$sql);
-if(mysqli_num_rows($result)==1){
-    $_SESSION['email']=$email;
-    header("Location: dashboard.php");
+
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $sql = "SELECT * FROM user WHERE email='$email'";
+    $result = mysqli_query($connection, $sql);
+
+    if (mysqli_num_rows($result) == 1) {
+
+        $user = mysqli_fetch_assoc($result);
+
+        if ($user['role'] == 'admin') {
+
+            $passwordCorrect = password_verify($password, $user['password']);
+
+        } 
+   
+        else {
+
+            $passwordCorrect = ($password == $user['password']);
+        }
+
+        if ($passwordCorrect) {
+
+            $_SESSION['email'] = $user['email'];
+            $_SESSION['name'] = $user['name'];
+            $_SESSION['role'] = $user['role'];
+
+            if ($user['role'] == 'admin') {
+
+                header("Location: admin_dashboard.php");
+                exit();
+
+            } elseif ($user['role'] == 'student') {
+
+                header("Location: student_dashboard.php");
+                exit();
+
+            } elseif ($user['role'] == 'teacher') {
+
+                header("Location: teacher_dashboard.php");
+                exit();
+
+            } 
+        } else {
+
+            echo "<script>
+                    alert('Invalid email or password');
+                  </script>";
+        }
+
+    } else {
+
+        echo "<script>
+                alert('Invalid email or password');
+              </script>";
+    }
 }
-else{
-    echo "<script>
-    alert('Invalid email or password');
-    </script>";
-}
-}
+?>
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,7 +126,7 @@ else{
                         <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
                         <button type="button" id="showPassword">
-                            <i class="fa-regular fa-eye"></i>
+                            <i class="fa-regular fa-eye" onclick="togglePassword('password')"></i>
                         </button>
                     </div>
                 </div>
@@ -106,7 +151,22 @@ else{
         </div>
     </main>
 
-    
+    <script>
+        function togglePassword(inputId) {
+            const passwordInput = document.getElementById(inputId);
+            const eyeIcon = passwordInput.nextElementSibling.querySelector('i');
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                eyeIcon.classList.remove("fa-eye");
+                eyeIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                eyeIcon.classList.remove("fa-eye-slash");
+                eyeIcon.classList.add("fa-eye");
+            }
+        }
+        </script>
 
 </body>
 </html>
