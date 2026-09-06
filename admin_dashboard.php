@@ -4,27 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
      <link rel="stylesheet" href="dashboard.css">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
         <header class="headers">
      <div class="heads">
-        <a href="dashboard.php" class="brands">
-    
+      <div class="dashboard">
+       
+            <p>  <i class="fa-solid fa-bars"></i> Dashboard</p>
+        </div>
      <nav class="mains">
-        
+   <a href="dashboard.php" class="brands">
+     
         <div class="search">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="text" placeholder="Search...">
         </div>
        
-        <a href="#" class="menus">
+      <div class="menus">
          <i class="fa-solid fa-bell"></i>
-        </a>
-        <a href="#" class="menus">
+        </div>
+        <div class="menus">
             <i class="fa-regular fa-circle-user"></i>
-        </a>
+        </div>
         <a href="logout.php" class="menus">Logout</a>
      </nav>
      </div>
@@ -114,5 +125,7 @@
     </div>
 
 </div>
+</body>
+</html>
 </body>
 </html>

@@ -7,7 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone=$_POST['phone'];
     $password=$_POST['password'];
     $confirm_password=$_POST['confirm_password'];
-    if($name=="" || $email=="" || $phone=="" || $password=="" || $confirm_password=="")
+    $role=$_POST['role'];
+    if($name=="" || $email=="" || $phone=="" || $password=="" || $confirm_password=="" || $role=="")
         {
         echo "<script>
                 alert('Please fill in all fields!');
@@ -47,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </script>";
         }
         else{
-            $sql="INSERT INTO user(name,email,phone,password,) VALUES('$name','$email','$phone','$password')";
+            $sql="INSERT INTO user(name,email,phone,password,role) VALUES('$name','$email','$phone','$password','$role')";
             if(mysqli_query($connection,$sql)){
                 echo"<scipt>
                 alert('Registration successful! You can now log in.');
@@ -139,19 +140,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="register_as">Register As</label>
                     <div class="box">
                         <i class="fa-regular fa-user"></i>
-                        <select id="register_as" name="register_as" required>
+                        <select id="role" name="role" required>
                             <option value="">Select your Role</option>
                             <option value="student">
-                               <i class="fa-solid fa-user-graduate"></i>
                                 Student
                             </option>
-                            <option value="librarian">
-                                <i class="fa-solid fa-user-tie"></i>
-                                Librarian
-                            </option>
                             <option value="teacher">
-                                <i class="fa-solid fa-chalkboard-teacher"></i>
-                                Teacher
+                              Teacher
                             </option>
                         </select>
                     </div>
@@ -163,6 +158,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="box">
                         <i class="fa-solid fa-lock"></i>
                         <input type="password" id="password" name="password" placeholder="Create a password" autocomplete="new-password" required>
+                          <i class="fa-regular fa-eye" onclick="togglePassword('password')"></i>
                     </div>
                 </div>
 
@@ -184,6 +180,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     Create Account
                     <i class="fa-solid fa-arrow-right"></i>
                 </button>
+                <br>
+                <p>OR</p>
+                <hr>
 
             </form>
 
@@ -191,8 +190,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 Already have an account?
                 <a href="login.php">Sign In</a>
             </div>
-
+         
+        <div class="notice">
+           
+            <p>
+                <i class="fa-solid fa-circle-exclamation"></i> Your account need admin approval before you can access the library services.
+                 Please wait for the approval email after registration.
+            </p>
         </div>
+        </div>
+        
     </main>
 
     <script>
@@ -205,6 +212,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 alert("Passwords do not match!");
             }
         });
+        function togglePassword(fieldId) {
+            const passwordField = document.getElementById(fieldId);
+            const eyeIcon = passwordField.nextElementSibling;
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                eyeIcon.classList.remove("fa-eye");
+                eyeIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordField.type = "password";
+                eyeIcon.classList.remove("fa-eye-slash");
+                eyeIcon.classList.add("fa-eye");
+            }
+        }
     </script>
 
 </body>
