@@ -1,3 +1,7 @@
+<?php
+include "header.php"
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,22 +12,7 @@
 </head>
 
 <body>
-<?php
-include "header.php"
-?>
-<header class="header">
-    <div class="logo">
-        <h2>Smart Library</h2>
-        <p>YOUR PLACE TO READ</p>
-    </div>
 
-    <nav class="navbar">
-        <a href="index.php">Home</a>
-        <a href="services.php">Services</a>
-        <a href="categories.php">Categories</a>
-        <a href="about.php" class="active">About</a>
-    </nav>
-</header>
 
 <section class="about-hero">
     <p class="small-title">ABOUT US</p>

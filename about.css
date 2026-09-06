@@ -7,48 +7,10 @@
 body {
     font-family: Arial, sans-serif;
     background: #f8faff;
-    color: #17233c;
+    color:  #126b63;
 }
 
-.header {
-    height: 90px;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 7%;
-    border-bottom: 1px solid #eeeeee;
-}
 
-.logo h2 {
-    font-size: 22px;
-    color: #17233c;
-}
-
-.logo p {
-    font-size: 9px;
-    letter-spacing: 2px;
-    color: #7d8494;
-    margin-top: 3px;
-}
-
-.navbar {
-    display: flex;
-    gap: 35px;
-}
-
-.navbar a {
-    text-decoration: none;
-    color: #555d70;
-    font-size: 14px;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.navbar a:hover,
-.navbar a.active {
-    color: #087fc1;
-}
 
 .about-hero {
     text-align: center;
@@ -56,7 +18,7 @@ body {
 }
 
 .small-title {
-    color: #087fc1;
+    color: #126b63;
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 3px;
@@ -73,7 +35,7 @@ body {
 .features h2 span,
 .project h2 span,
 .contact h2 span {
-    color: #087fc1;
+    color:#172033;
 }
 
 .about-hero > p:last-child {
@@ -145,7 +107,7 @@ body {
     width: 52px;
     height: 52px;
     background: #e7f5fd;
-    color: #087fc1;
+    color: #126b63;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -175,7 +137,7 @@ body {
 }
 
 .info-box {
-    background: #087fc1;
+    background:  #126b63;
     color: white;
     padding: 35px;
     border-radius: 14px;
@@ -183,7 +145,7 @@ body {
 
 .info-box .icon {
     background: white;
-    color: #087fc1;
+    color:  #126b63;
 }
 
 .info-box h2 {
@@ -220,7 +182,7 @@ body {
 }
 
 .contact {
-    background: #17233c;
+    background:  #126b63;
     color: white;
     text-align: center;
     padding: 45px 20px;
@@ -244,7 +206,7 @@ body {
 }
 
 footer {
-    background: #101a2d;
+    background:  #126b63;
     color: #aaa;
     text-align: center;
     padding: 20px;

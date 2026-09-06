@@ -26,9 +26,11 @@
             <i class="fa-regular fa-circle-user"></i>
         </a>
         <a href="logout.php" class="menus">Logout</a>
+</a>
      </nav>
      </div>
     </header>
+    
     <div class="sidebar">
 
     <div class="logo">
@@ -114,5 +116,18 @@
     </div>
 
 </div>
+    <div class="main-content">
+
+        <div class="welcome">
+
+            <h1>Welcome Back, Admin! </h1>
+
+            <p>
+                Manage your library efficiently from your dashboard.
+            </p>
+
+        </div>
+
+    </div>
 </body>
 </html>
