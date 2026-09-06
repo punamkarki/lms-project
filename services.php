@@ -10,9 +10,16 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 <?php
 include "header.php"
 ?>
+=======
+      <?php
+      include 'header.php';
+      ?>
+    <!-- Services Header -->
+>>>>>>> origin/karki
     <section class="services-header">
 
         <p class="small-title">WHAT WE OFFER</p>
