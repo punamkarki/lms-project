@@ -140,12 +140,11 @@ include 'database.php';
         <div class="stat-icon">
             <i class="fa-solid fa-book"></i>
         </div>
-        <div>
+     <div>
             <p>Total Books</p>
             <h2>1,250</h2>
         </div>
     </div>
-
     <div class="stat-card">
         <div class="stat-icon">
             <i class="fa-solid fa-user-graduate"></i>
@@ -176,7 +175,21 @@ include 'database.php';
         </div>
     </div>
 
+
 </div>
+<table class="table">
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Phone</td>
+        <td>Role</td>
+        <td>Status</td>
+    </tr>
+    </thead>
+    </table>
+ 
 
 </body>
 </html>
