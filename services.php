@@ -10,10 +10,16 @@
 </head>
 
 <body>
+<<<<<<< HEAD
+<?php
+include "header.php"
+?>
+=======
       <?php
       include 'header.php';
       ?>
     <!-- Services Header -->
+>>>>>>> origin/karki
     <section class="services-header">
 
         <p class="small-title">WHAT WE OFFER</p>
@@ -29,8 +35,6 @@
 
     </section>
 
-
-    <!-- Services -->
     <section class="services-container">
 
         <div class="service-card">
@@ -94,8 +98,6 @@
 
     </section>
 
-
-    <!-- Bottom Section -->
     <section class="bottom-section">
 
         <h2>Ready to find your next book?</h2>
