@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8faff;
+    color: #17233c;
+}
+
+
+.services-header {
+    text-align: center;
+    padding: 70px 20px 45px;
+}
+
+.small-title {
+    color: #087fc1;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.services-header h1 {
+    font-size: 42px;
+    margin-bottom: 18px;
+}
+
+.services-header h1 span {
+    color: #087fc1;
+}
+
+.description {
+    max-width: 650px;
+    margin: auto;
+    color: #777;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.services-container {
+    width: 85%;
+    max-width: 1100px;
+    margin: 20px auto 70px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border: 1px solid #e7edf3;
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+.icon {
+    width: 55px;
+    height: 55px;
+
+    background: #e7f5fd;
+    color: #087fc1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+    font-size: 24px;
+
+    margin-bottom: 20px;
+}
+
+.service-card h2 {
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.bottom-section {
+    width: 85%;
+    max-width: 1100px;
+
+    margin: 0 auto 70px;
+    padding: 45px;
+
+    background: #087fc1;
+    color: white;
+
+    text-align: center;
+    border-radius: 14px;
+}
+
+.bottom-section h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.bottom-section p {
+    margin-bottom: 22px;
+}
+
+.bottom-section a {
+    display: inline-block;
+
+    background: white;
+    color: #087fc1;
+
+    text-decoration: none;
+
+    padding: 12px 25px;
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.bottom-section a:hover {
+    background: #f1f1f1;
+}
+
+
+
+@media (max-width: 800px) {
+
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+
+    .services-header h1 {
+        font-size: 32px;
+    }
+
+    .bottom-section {
+        width: 90%;
+        padding: 35px 20px;
+    }
+
+}
