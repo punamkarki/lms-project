@@ -31,7 +31,7 @@ a {
 .headers {
     height: 75px;
     width: 100%;
-    background: white;
+    background:  #021e1b;
     border-bottom: 1px solid #e4ebe8;
     position: fixed;
     top: 0;
@@ -64,7 +64,7 @@ a {
 
 .menus {
     padding: 9px 14px;
-    color: #64736f;
+    color: #f2f8f6;
     font-size: 12px;
     font-weight: 600;
     border-radius: 8px;
@@ -78,7 +78,7 @@ a {
 }
 .menus >i{
     margin-left:16px;
-    color: #9aa8a5;
+    color: #f4f9f8;
     font-size: 13px;
 }
 .notification {
@@ -86,7 +86,7 @@ a {
 }
 
 .notification a {
-    color: #9aa8a5;
+    color: #eff5f4;
     text-decoration: none;
     position: relative;
 }
@@ -116,8 +116,8 @@ a {
     width: 230px;
     height: 100vh;
     padding: 25px 15px;
-    background: white;
-    border-right: 1px solid white;
+    background: #021e1b ;
+   
     display: flex;
     flex-direction: column;
     z-index: 1000;
@@ -131,7 +131,7 @@ a {
     display: flex;
     align-items: center;
     gap: 12px;
-    color: #126b63;
+    color: #e9ecec;
     border-bottom: 1px solid #edf1ef;
     margin-bottom: 20px;
 }
@@ -141,7 +141,7 @@ a {
 }
 
 .sidebar .logo span {
-    color: #344641;
+    color: #e5f0ed;
     font-size: 12px;
     font-weight: 800;
     letter-spacing: 1.5px;
@@ -167,7 +167,7 @@ a {
     display: flex;
     align-items: center;
     gap: 13px;
-    color: #71807c;
+    color: #f1f4f3;
     font-size: 12px;
     font-weight: 600;
     border-radius: 9px;
@@ -178,6 +178,7 @@ a {
     width: 20px;
     text-align: center;
     font-size: 14px;
+    color:white;
 }
 
 .menu li a:hover {
@@ -208,7 +209,7 @@ a {
     display: flex;
     align-items: center;
     gap: 13px;
-    color: #899692;
+    color: #eff8f5;
     font-size: 11px;
     font-weight: 600;
     border-radius: 9px;
@@ -251,7 +252,7 @@ a {
     padding:0 12px;
     border: none;
     outline:   none;
-    color: #263633;
+    color: #f4faf9;
 
     font-size: 11px;
 
@@ -268,12 +269,12 @@ a {
 }
 .dashboard  p i{
     margin-left:16px;
-    color: #030303;
+    color: #f2eded;
     font-size: 13px;
 }
 .dashboard  p{
     margin-top: 15px;
-    color: #070707;
+    color: #ece5e5;
     font-size: 15px;
 }
 .main-content {

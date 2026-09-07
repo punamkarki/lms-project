@@ -1,3 +1,16 @@
+<?php
+include 'database.php';
+$notification_sql = "SELECT COUNT(*) AS pending_count 
+                     FROM user 
+                     WHERE role IN ('student', 'teacher') 
+                     AND status = 'pending'";
+
+$notification_result = mysqli_query($connection, $notification_sql);
+$notification_data = mysqli_fetch_assoc($notification_result);
+
+$pending_count = $notification_data['pending_count'];
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +70,7 @@
 
     <ul class="menu">
 
-        <li class="active">
+        <li>
             <a href="admin_dashboard.php">
       <i class="fa-solid fa-bars"></i>
                 <span>Dashboard</span>
@@ -133,3 +146,14 @@
     </div>
 
 </div>
+<script>
+let page = location.pathname.split('/').pop();
+
+document.querySelectorAll('.menu li a').forEach(a => {
+    if (a.getAttribute('href') == page)
+        a.parentElement.classList.add('active');
+});
+</script>
+ 
+</body>
+</html>

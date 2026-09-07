@@ -1,5 +1,5 @@
  <?php
-include 'databas`e.php';
+include 'database.php';
 
 
 $sql = "SELECT * FROM user WHERE role IN ('student', 'teacher') ORDER BY id DESC";
@@ -15,15 +15,6 @@ $teacher_result = mysqli_query($connection, $teacher_sql);
 $teacher_data = mysqli_fetch_assoc($teacher_result);
 $total_teachers = $teacher_data['total_teachers'];
 
-$notification_sql = "SELECT COUNT(*) AS pending_count 
-                     FROM user 
-                     WHERE role IN ('student', 'teacher') 
-                     AND status = 'pending'";
-
-$notification_result = mysqli_query($connection, $notification_sql);
-$notification_data = mysqli_fetch_assoc($notification_result);
-
-$pending_count = $notification_data['pending_count'];
 ?>
 
 
@@ -37,128 +28,9 @@ $pending_count = $notification_data['pending_count'];
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-        <header class="headers">
-     <div class="heads">
-      <div class="dashboard">
-       
-            <p>  <i class="fa-solid fa-bars"></i> Dashboard</p>
-        </div>
-    <nav class="mains">
-
-    <div class="search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Search...">
-    </div>
-
-    <!-- <div class="menus">
-        <i class="fa-solid fa-bell"></i>
-    </div> -->
-    <div class="menus notification">
-    <a href="notifications.php">
-         <i class="fa-solid fa-bell"></i>
-
-        <?php if ($pending_count > 0) { ?>
-            <span class="notification-count">
-                <?php echo $pending_count; ?>
-            </span>
-        <?php } ?>
-    </a>
-</div>
-
-    <div class="menus">
-        <i class="fa-regular fa-circle-user"></i>
-    </div>
-
-    <a href="logout.php" class="menus">Logout</a>
-
-</nav>
-     </div>
-    </header>
-  
-   
-    <div class="sidebar">
-
-    <div class="logo">
-        <i class="fa-solid fa-book-open"></i>
-        <span>LIBRARY</span>
-    </div>
-
-    <ul class="menu">
-
-        <li class="active">
-            <a href="admin_dashboard.php">
-      <i class="fa-solid fa-bars"></i>
-                <span>Dashboard</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="books.php">
-                <i class="fa-solid fa-book"></i>
-                <span>Books</span>
-            </a>
-        </li>
-
-      
-        <li>
-            <a href="students.php">
-                <i class="fa-solid fa-user-graduate"></i>
-                <span>Students</span>
-            </a>
-        </li>
-        <li>
-            <a href="teachers.php">
-                
-               <i class="fa-solid fa-person-chalkboard"></i>
-                <span>Teachers</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="#">
-                <i class="fa-solid fa-book-open-reader"></i>
-                <span>Issue Books</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="#">
-                <i class="fa-solid fa-rotate-left"></i>
-                <span>Return Books</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="#">
-                <i class="fa-solid fa-clock"></i>
-                <span>Overdue Books</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="#">
-                <i class="fa-solid fa-chart-line"></i>
-                <span>Reports</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="#">
-                <i class="fa-solid fa-gear"></i>
-                <span>Settings</span>
-            </a>
-        </li>
-
-    </ul>
-
-    <div class="sidebar-bottom">
-        <a href="#">
-            <i class="fa-solid fa-circle-question"></i>
-            <span>Need Help?</span>
-        </a>
-
-    
-    </div>
+      <?php
+      include 'admin_head.php'
+      ?>
 
 </div>
    <div class="main-content">

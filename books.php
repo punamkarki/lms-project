@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-    include 'nav.php'
+    include 'admin_head.php'
     ?>
 </body>
 </html>
