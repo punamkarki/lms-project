@@ -3,38 +3,123 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #f5f7f9;
     color: #172033;
+    padding: 40px;
+}
+.notification-box {
+    width: 500px;
+    min-height: 200px;
+    margin: 30px auto;
+    background: white;
+    border: 1px solid #2b2a2a;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+  
 }
 
-a {
-    text-decoration: none;
+.notification-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
-.notification {
-    position: relative;
+.request {
+    width: 100%;
+    min-height: 160px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    transition: 0.3s;
 }
-
-.notification a {
-    color: #9aa8a5;
-    text-decoration: none;
-    position: relative;
+.request:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+    transform: translateY(-2px);
 }
-
-.notification-count {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background: red;
-    color: white;
-    font-size: 11px;
-    font-weight: bold;
-    min-width: 18px;
-    height: 18px;
-    border-radius: 50%;
+.request > div:first-child {
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
+}
+.request > div:first-child i {
+    width: 45px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto 12px auto;
+    background: #e8f1ff;
+    color: #2563eb;
+    border-radius: 50%;
+    font-size: 18px;
 }
 
+.request strong {
+    color: #172033;
+    font-weight: 600;
+}
+.request-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+}
+.request-buttons a {
+    padding: 9px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+.approve {
+    background: #16a34a;
+    color: white;
+}
+
+.approve:hover {
+    background: #15803d;
+}
+
+.reject {
+    background: #dc2626;
+    color: white;
+}
+
+.reject:hover {
+    background: #b91c1c;
+}
+.notification-list > p {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+    border: 1px dashed #ccc;
+    border-radius: 10px;
+    background: #fafafa;
+}
+
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .notification-box {
+        width: 100%;
+        margin: 20px auto;
+    }
+
+}

@@ -23,6 +23,7 @@ $result = mysqli_query($connection, $sql);
 </head>
 
 <body>
+    <div class="notification-box">
 
 <h1>Registration Requests</h1>
 
@@ -63,6 +64,7 @@ $result = mysqli_query($connection, $sql);
 
         </div>
 
+
     <?php } ?>
 
 <?php } else { ?>
@@ -73,5 +75,6 @@ $result = mysqli_query($connection, $sql);
 
 </div>
 
+</div>
 </body>
 </html>

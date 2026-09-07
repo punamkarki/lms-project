@@ -27,9 +27,7 @@ $pending_count = $notification_data['pending_count'];
 ?>
 
 
-
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

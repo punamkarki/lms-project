@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password=$_POST['password'];
     $confirm_password=$_POST['confirm_password'];
     $role=$_POST['role'];
+  
     if($name=="" || $email=="" || $phone=="" || $password=="" || $confirm_password=="" || $role=="")
         {
         echo "<script>
@@ -48,9 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </script>";
         }
         else{
-            $sql="INSERT INTO user(name,email,phone,password,role) VALUES('$name','$email','$phone','$password','$role')";
+            $sql="INSERT INTO user(name,email,phone,password,role,status) VALUES('$name','$email','$phone','$password','$role','pending')";
             if(mysqli_query($connection,$sql)){
-                echo"<scipt>
+                echo"<script>
                 alert('Registration successful! You can now log in.');
                 </script>";
             }
