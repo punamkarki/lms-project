@@ -12,6 +12,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_num_rows($result) == 1) {
 
         $user = mysqli_fetch_assoc($result);
+                if ($user['role'] == 'student' || $user['role'] == 'teacher') {
+
+            if ($user['status'] == 'pending') {
+
+                echo "<script>
+                        alert('Your account is waiting for admin approval.');
+                        window.location.href='login.php';
+                      </script>";
+                exit();
+
+            }
+
+            if ($user['status'] == 'rejected') {
+
+                echo "<script>
+                        alert('Your account has been rejected by admin.');
+                        window.location.href='login.php';
+                      </script>";
+                exit();
+            }
+        }
+
+
 
         if ($user['role'] == 'admin') {
 
@@ -61,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
