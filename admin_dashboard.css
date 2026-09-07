@@ -81,7 +81,31 @@ a {
     color: #9aa8a5;
     font-size: 13px;
 }
+.notification {
+    position: relative;
+}
 
+.notification a {
+    color: #9aa8a5;
+    text-decoration: none;
+    position: relative;
+}
+
+.notification-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: red;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 
@@ -317,19 +341,4 @@ h2{
     text-align: center;
     align-items:center;
 
-}
-.table{
-    border: 1px solid #020202;
-    margin-left: 270px;
-    margin-top: 20px;
-    width: 72%;
-  
-    box-shadow: 0 10px 30px rgba(20,60,55,.06);
-}
-table tr {
-    
-    background: #f4f8f7;
-    color: rgb(15, 15, 15);
-  border: 1px solid #020202;
-    text-align: left;
 }

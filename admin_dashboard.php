@@ -1,6 +1,32 @@
-<?php
+ <?php
 include 'database.php';
+
+
+$sql = "SELECT * FROM user WHERE role IN ('student', 'teacher') ORDER BY id DESC";
+$result = mysqli_query($connection, $sql);
+
+$student_sql = "SELECT COUNT(*) AS total_students FROM user WHERE role = 'student'";
+$student_result = mysqli_query($connection, $student_sql);
+$student_data = mysqli_fetch_assoc($student_result);
+$total_students = $student_data['total_students'];
+
+$teacher_sql = "SELECT COUNT(*) AS total_teachers FROM user WHERE role = 'teacher'";
+$teacher_result = mysqli_query($connection, $teacher_sql);
+$teacher_data = mysqli_fetch_assoc($teacher_result);
+$total_teachers = $teacher_data['total_teachers'];
+
+$notification_sql = "SELECT COUNT(*) AS pending_count 
+                     FROM user 
+                     WHERE role IN ('student', 'teacher') 
+                     AND status = 'pending'";
+
+$notification_result = mysqli_query($connection, $notification_sql);
+$notification_data = mysqli_fetch_assoc($notification_result);
+
+$pending_count = $notification_data['pending_count'];
 ?>
+
+
 
 
     <!DOCTYPE html>
@@ -26,9 +52,20 @@ include 'database.php';
         <input type="text" placeholder="Search...">
     </div>
 
-    <div class="menus">
+    <!-- <div class="menus">
         <i class="fa-solid fa-bell"></i>
-    </div>
+    </div> -->
+    <div class="menus notification">
+    <a href="notifications.php">
+         <i class="fa-solid fa-bell"></i>
+
+        <?php if ($pending_count > 0) { ?>
+            <span class="notification-count">
+                <?php echo $pending_count; ?>
+            </span>
+        <?php } ?>
+    </a>
+</div>
 
     <div class="menus">
         <i class="fa-regular fa-circle-user"></i>
@@ -151,7 +188,7 @@ include 'database.php';
         </div>
         <div>
             <p>Students</p>
-            <h2>540</h2>
+     <h2><?php echo $total_students; ?></h2>
         </div>
     </div>
 
@@ -161,7 +198,7 @@ include 'database.php';
         </div>
         <div>
             <p>Teachers</p>
-            <h2>35</h2>
+            <h2><?php echo $total_teachers; ?></h2>
         </div>
     </div>
 
@@ -174,22 +211,9 @@ include 'database.php';
             <h2>85</h2>
         </div>
     </div>
-
-
 </div>
-<table class="table">
-    <thead>
-    <tr>
-        <td>ID</td>
-        <td>Name</td>
-        <td>Email</td>
-        <td>Phone</td>
-        <td>Role</td>
-        <td>Status</td>
-    </tr>
-    </thead>
-    </table>
- 
+
+
 
 </body>
 </html>
