@@ -82,8 +82,99 @@ $total_teachers = $teacher_data['total_teachers'];
         </div>
     </div>
 </div>
+<div class="dashboard-box">
+
+  
+    <div class="schedule-section">
+
+        <div class="section-header">
+            <h2>Book Issue Schedule</h2>
+            <p>View books provided to each faculty by day.</p>
+        </div>
+
+        <div class="schedule-table">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Faculty</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>BSC</td>
+                    </tr>
+
+                    <tr>
+                        <td>Monday</td>
+                        <td>BBS, MBS</td>
+                    </tr>
+
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>BSc CSIT, BIT</td>
+                    </tr>
+
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>BCA, BSW</td>
+                    </tr>
+
+                    <tr>
+                        <td>Thursday</td>
+                        <td>BBA, BBM</td>
+                    </tr>
+
+                    <tr>
+                        <td>Friday</td>
+                        <td>BPA, MPA</td>
+                    </tr>
+
+                    <tr>
+                        <td>Saturday</td>
+                        <td>Closed</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
 
 
 
+    <div class="right-dashboard">
+
+
+        <div class="librarian-box">
+
+            <div class="librarian">
+
+                <div class="libraian-icon">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+
+                <h2>Add Librarian</h2>
+
+                <p>
+                    Create a new account for librarian
+                    and give access to them.
+                </p>
+
+                <a href="librarian.php" class="librarian-btn">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Add Librarian
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 </body>
 </html>
