@@ -28,53 +28,44 @@ a {
 }
 
 .schedule-section {
-    margin-top: 50px;
+
     background: white;
     border-radius: 0px;
     padding: 25px;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+
 }
 
 .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  text-align: left;
+   align-items: left;
     margin-bottom: 20px;
-    margin-left: 250px;
+margin-right:100px ;
+  
 }
 
 .section-header h2 {
-    margin: 0;
+
     font-size: 22px;
     color: #172033;
-    margin-top: 40px;
+  
 }
 
 .section-header p {
-    margin-top: 6px;
-    color: #777;
-    font-size: 14px;
-}
-
-.view-all {
-    text-decoration: none;
+    margin-top: 20px;
     color: #126b63;
     font-size: 14px;
-    font-weight: 600;
-}
-
-.view-all:hover {
-    text-decoration: underline;
 }
 
 .schedule-table {
-    width: 100%;
+    width: 80%;
     overflow-x: auto;
-    margin-left: 60px;
+    margin-left: 250px;
+   
 }
 
 .schedule-table table {
-    width: 80%;
+    width: 100%;
     border-collapse: collapse;
 }
 
@@ -113,6 +104,8 @@ a {
     gap: 20px; 
     margin-left: 100px;
     margin-bottom: 100px;
+    position: relative;
+    margin:120px 0px 20px 100px;
 }
 .stat-card{
     width: 200px;

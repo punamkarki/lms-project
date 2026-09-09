@@ -121,9 +121,9 @@ $pending_count = $notification_data['pending_count'];
         </li>
 
         <li>
-            <a href="#">
-                <i class="fa-solid fa-chart-line"></i>
-                <span>Reports</span>
+            <a href="notice.php">
+               <i class="fa-solid fa-bullhorn"></i>
+                <span>Notice</span>
             </a>
         </li>
 

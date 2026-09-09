@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,8 +30,8 @@
             <i class="fa-solid fa-user-graduate"></i>
         </div>
         <div>
-            <p>Students</p>
-     <h2><?php echo $total_students; ?></h2>
+            <p>Returned Books</p>
+     <h2> 20</h2>
         </div>
     </div>
 
@@ -37,8 +40,8 @@
             <i class="fa-solid fa-person-chalkboard"></i>
         </div>
         <div>
-            <p>Teachers</p>
-            <h2><?php echo $total_teachers; ?></h2>
+            <p>Overdue Books</p>
+            <h2>20</h2>
         </div>
     </div>
 
@@ -56,14 +59,8 @@
     <div class="schedule-section">
 
     <div class="section-header">
-        <div>
             <h2>Book Issue Schedule</h2>
             <p>View books provided to each faculty by day.</p>
-        </div>
-
-        <a href="book_schedule.php" class="view-all">
-            View All
-        </a>
     </div>
 
     <div class="schedule-table">

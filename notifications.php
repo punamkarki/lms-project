@@ -3,7 +3,7 @@
 <?php
 include 'database.php';
 include 'admin_head.php';
-/* Get pending registration requests */
+ 
 $registration_sql = "SELECT id, name, role, 'registration' AS type
                      FROM user
                      WHERE role IN ('student', 'teacher')
@@ -133,9 +133,6 @@ if ($registration_result) {
 
 
             <?php foreach ($notifications as $notification) { ?>
-
-
-                <!-- REGISTRATION REQUEST -->
 
                 <?php if ($notification['type'] == 'registration') { ?>
 

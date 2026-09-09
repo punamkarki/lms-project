@@ -302,6 +302,7 @@ a {
     width: 200px;
     height: 100px;
     background: #126b63;
+   
     border-radius: 10px;
     padding: 15px;
     color: white;
@@ -343,98 +344,146 @@ h2{
     align-items:center;
 
 }
+
+
 .dashboard-box {
+    margin: 30px 40px 100px 40px;
+margin-left:250px ;
     display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    gap: 18px;
-    margin: 25px 30px;
+    grid-template-columns: minmax(0, 1fr) 400px;
+    gap: 25px;
+
     align-items: start;
 }
 
-.schedule-section {
+
+
+.notice-box {
     background: white;
-    border: 1px solid #e4e9ee;
+    border: 1px solid #e5e7eb;
     border-radius: 12px;
+
     padding: 20px;
-    box-sizing: border-box;
+
+    min-height: 300px;
 }
 
-.section-header {
-    margin-bottom: 15px;
+
+/* NOTICE HEADER */
+.box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 16px;
+    margin-bottom: 5px;
+
+    border-bottom: 1px solid #eeeeee;
 }
 
-.section-header h2 {
-    margin-right: 40px;
-    font-size: 26px;
+.box-header h2 {
     color: #172033;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.section-header p {
+    font-size: 20px;
     margin: 0;
-    font-size: 14px;
+}
+
+.box-header a {
     color: #126b63;
-}
-
-
-.schedule-table {
-    width: 100%;
-
-}
-
-.schedule-table table {
-    width: 70%;
-    border-collapse: collapse;
-     margin-left: 200px;
-}
-
-.schedule-table th {
-    background: #f5f7f9;
-    color: #172033;
-    text-align: left;
-    padding: 10px 14px;
     font-size: 14px;
     font-weight: 600;
-    border: 1px solid #020202;
 }
 
-.schedule-table td {
-    padding: 10px 14px;
-    font-size: 14px;
-    color: #536176;
-    border: 1px solid #0b0b0b;
+.box-header a:hover {
+    color: #178b82;
 }
 
 
-.right-dashboard {
+/* NOTICE */
+.notice-item {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    border: 1px solid #c3cad1;
-    width: 300px;
-    height: 100px;
-    margin-top:80px;
+    gap: 14px;
+
+    padding: 16px 5px;
+
+    border-bottom: 1px solid #eeeeee;
 }
+
+.notice-item:last-child {
+    border-bottom: none;
+}
+
+.notice-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f0f8f7;
+    color: #126b63;
+
+    border-radius: 9px;
+}
+
+.notice-content {
+    flex: 1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 20px;
+}
+
+.notice-content h4 {
+    margin: 0 0 5px;
+
+    color: #172033;
+    font-size: 15px;
+}
+
+.notice-content p {
+    margin: 0;
+
+    color: #727982;
+    font-size: 13px;
+}
+
+.notice-content small {
+    color: #798392;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+
+
 .librarian-box {
-    background: #f5f7f6;
-    border: 1px solid #c3cad1;
+    background: #178b82;
+
     border-radius: 12px;
-    padding: 20px;
-    width: 300px;
 
+    width: 90%;
+    height: 240px;
 
+    padding: 30px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .librarian {
+    width: 100%;
     text-align: center;
 }
 
 .libraian-icon {
-    width: 48px;
-    height: 48px;
-    margin: 0 auto 10px;
-    border-radius: 10px;
-    background: #f1f5f9;
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 12px;
 
     display: flex;
     align-items: center;
@@ -442,44 +491,73 @@ h2{
 }
 
 .libraian-icon i {
-    font-size: 21px;
-    color: #334155;
+    font-size: 25px;
+    color: white;
 }
 
 .librarian h2 {
-    margin: 0 0 6px;
-    font-size: 20px;
-    color: #126b63;
+    margin: 0 0 10px;
+
+    font-size: 24px;
+    color: white;
 }
 
 .librarian p {
-    margin: 0 auto 15px;
     max-width: 320px;
-    font-size: 13px;
-    line-height: 1.5;
-    color: #718096;
+
+    margin: 0 auto 25px;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    color: white;
 }
 
 .librarian-btn {
     display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 10px 15px;
 
-    background: #126b63;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 12px 25px;
+
+    background: #075d56;
     color: white;
 
-    border-radius: 7px;
-    text-decoration: none;
+    border-radius: 8px;
 
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
 }
 
-@media (max-width: 850px) {
+.librarian-btn:hover {
+    background: #064d48;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
 
     .dashboard-box {
         grid-template-columns: 1fr;
+        margin: 30px 20px;
     }
 
+    .librarian-box {
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .notice-content {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .notice-content small {
+        white-space: normal;
+    }
 }

@@ -15,6 +15,9 @@ $teacher_result = mysqli_query($connection, $teacher_sql);
 $teacher_data = mysqli_fetch_assoc($teacher_result);
 $total_teachers = $teacher_data['total_teachers'];
 
+$noticestmt = $connection->prepare("SELECT id, title, description, created_at FROM notices ORDER BY created_at DESC LIMIT 3");
+$noticestmt->execute();
+$notices = $noticestmt->get_result();
 ?>
 
 
@@ -32,7 +35,6 @@ $total_teachers = $teacher_data['total_teachers'];
       include 'admin_head.php'
       ?>
 
-</div>
    <div class="main-content">
 
     <div class="welcome">
@@ -82,94 +84,83 @@ $total_teachers = $teacher_data['total_teachers'];
         </div>
     </div>
 </div>
+
 <div class="dashboard-box">
 
-  
-    <div class="schedule-section">
 
-        <div class="section-header">
-            <h2>Book Issue Schedule</h2>
-            <p>View books provided to each faculty by day.</p>
+    <div class="notice-box">
+
+        <div class="box-header">
+            <h2>Recent Notices</h2>
+            <a href="notice.php">View All</a>
         </div>
 
-        <div class="schedule-table">
+        <?php if($notices->num_rows > 0): ?>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Day</th>
-                        <th>Faculty</th>
-                    </tr>
-                </thead>
+            <?php while($notice = $notices->fetch_assoc()): ?>
 
-                <tbody>
-                    <tr>
-                        <td>Sunday</td>
-                        <td>BSC</td>
-                    </tr>
+                <div class="notice-item">
 
-                    <tr>
-                        <td>Monday</td>
-                        <td>BBS, MBS</td>
-                    </tr>
+                    <div class="notice-icon">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
 
-                    <tr>
-                        <td>Tuesday</td>
-                        <td>BSc CSIT, BIT</td>
-                    </tr>
+                    <div class="notice-content">
 
-                    <tr>
-                        <td>Wednesday</td>
-                        <td>BCA, BSW</td>
-                    </tr>
+                        <div>
+                            <h4>
+                                <?= htmlspecialchars($notice['title']) ?>
+                            </h4>
 
-                    <tr>
-                        <td>Thursday</td>
-                        <td>BBA, BBM</td>
-                    </tr>
+                            <p>
+                                <?= htmlspecialchars($notice['description']) ?>
+                            </p>
+                        </div>
 
-                    <tr>
-                        <td>Friday</td>
-                        <td>BPA, MPA</td>
-                    </tr>
+                        <div>
+                            <small>
+                                <?= date("F d, Y", strtotime($notice["created_at"])) ?>
+                            </small>
+                        </div>
 
-                    <tr>
-                        <td>Saturday</td>
-                        <td>Closed</td>
-                    </tr>
-                </tbody>
-            </table>
+                    </div>
 
-        </div>
+                </div>
+
+            <?php endwhile; ?>
+
+        <?php else: ?>
+
+            <div class="no-notice">
+                <i class="fa-regular fa-bell-slash"></i>
+                <p>No recent notices available.</p>
+            </div>
+
+        <?php endif; ?>
 
     </div>
 
 
+    <!-- RIGHT SIDE: ADD LIBRARIAN -->
+    <div class="librarian-box">
 
-    <div class="right-dashboard">
+        <div class="librarian">
 
-
-        <div class="librarian-box">
-
-            <div class="librarian">
-
-                <div class="libraian-icon">
-                    <i class="fa-solid fa-user-tie"></i>
-                </div>
-
-                <h2>Add Librarian</h2>
-
-                <p>
-                    Create a new account for librarian
-                    and give access to them.
-                </p>
-
-                <a href="librarian.php" class="librarian-btn">
-                    <i class="fa-solid fa-user-plus"></i>
-                    Add Librarian
-                </a>
-
+            <div class="libraian-icon">
+                <i class="fa-solid fa-user-tie"></i>
             </div>
+
+            <h2>Add Librarian</h2>
+
+            <p>
+                Create a new account for librarian
+                and give access to them.
+            </p>
+
+            <a href="librarian.php" class="librarian-btn">
+                <i class="fa-solid fa-user-plus"></i>
+                Add Librarian
+            </a>
 
         </div>
 
