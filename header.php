@@ -30,8 +30,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
     <a href="services.php" class="menu <?php echo ($currentPage == 'services.php') ? 'current' : ''; ?>">
         <i class="fa-solid fa-book"></i>Services</a> 
 
-    <a href="categories.php" class="menu <?php echo ($currentPage == 'categories.php') ? 'current' : ''; ?>">
-        <i class="fa-solid fa-layer-group"></i>Categories</a> 
+   
 
     <a href="about.php" class="menu <?php echo ($currentPage == 'about.php') ? 'current' : ''; ?>">
         <i class="fa-solid fa-circle-info"></i>About</a> 

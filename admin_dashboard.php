@@ -140,8 +140,6 @@ $notices = $noticestmt->get_result();
 
     </div>
 
-
-    <!-- RIGHT SIDE: ADD LIBRARIAN -->
     <div class="librarian-box">
 
         <div class="librarian">

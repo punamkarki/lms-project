@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <title>Create Notice</title>
 
-    <link rel="stylesheet" href="admin_dashboard.css">
+    <!-- <link rel="stylesheet" href="admin_dashboard.css"> -->
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -77,18 +77,36 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         .create-notice-header {
             margin-bottom: 25px;
+             background: linear-gradient( 135deg, #0d3c38, #a8ebe0);
+             border: 1px solid #d5ebe7;
+            border-radius: 18px;
+
+            padding: 30px 35px;
+            height:130px;
+           
+            align-items: center;
+            justify-content: space-between;
+     
+
+            
         }
 
         .create-notice-header h1 {
             margin: 0 0 7px;
             font-size: 27px;
-            color: #172033;
+            color: #040404;
+       
+            
         }
+             .create-notice-header i {
+               
+              color: #020202;
+             }
 
         .create-notice-header p {
-            margin: 0;
-            color: #64748b;
-            font-size: 14px;
+              text-align:left;
+            font-size: 17px;
+            color: #0d0d0d;
         }
 
         .notice-form-card {
