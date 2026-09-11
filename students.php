@@ -113,25 +113,27 @@ $approved_students = mysqli_fetch_assoc($approved_result)['approved'];
                 <td>
                     <?php echo ucfirst($row['status']); ?>
                 </td>
+<td class="actions">
 
-                <td>
+    <!-- <?php if($row['status'] == 'pending') { ?>
+        <a class="approve-btn"
+           href="approve.php?id=<?php echo $row['id']; ?>">
+            Approve
+        </a>
+    <?php } ?> -->
 
-                    <?php if($row['status'] == 'pending') { ?>
+    <a class="edit-btn"
+       href="edit.php?id=<?php echo $row['id']; ?>">
+        <i class="fa-solid fa-pen"></i> Edit
+    </a>
 
-                        <a href="approve.php?id=<?php echo $row['id']; ?>">
-                            Approve
-                        </a>
+    <a class="delete-btn"
+       href="delete.php?id=<?php echo $row['id']; ?>"
+       onclick="return confirm('Are you sure you want to delete this student?');">
+        <i class="fa-solid fa-trash"></i> Delete
+    </a>
 
-                    <?php } ?>
-
-                    <a href="delete_student.php?id=<?php echo $row['id']; ?>">
-                        Delete
-                    </a>
-                     <a href="edit_student.php?id=<?php echo $row['id']; ?>">
-                        Edit
-                    </a>
-
-                </td>
+</td>
 
             </tr>
 
