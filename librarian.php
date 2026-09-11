@@ -3,7 +3,7 @@ session_start();
 
 include "database.php";
 if (!isset($_SESSION["role"]) || strtolower(trim($_SESSION["role"])) !== "admin") {
-    header("Location:librarian-dashboard.php");
+    header("Location:librarian.php");
     exit();
 }
 

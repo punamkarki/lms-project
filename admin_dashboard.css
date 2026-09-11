@@ -398,7 +398,6 @@ margin-left:250px ;
 }
 
 
-/* NOTICE */
 .notice-item {
     display: flex;
     gap: 14px;
@@ -537,7 +536,6 @@ margin-left:250px ;
 }
 
 
-/* RESPONSIVE */
 @media (max-width: 900px) {
 
     .dashboard-box {
