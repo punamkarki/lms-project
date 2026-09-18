@@ -2,10 +2,10 @@
 session_start();
 
 include "database.php";
-if (!isset($_SESSION["role"]) || strtolower(trim($_SESSION["role"])) !== "admin") {
-    header("Location:librarian.php");
-    exit();
-}
+// if (!isset($_SESSION["role"]) || strtolower(trim($_SESSION["role"])) !== "admin") {
+//     header("Location:login.php");
+//     exit();
+// }
 
 $message = "";
 $error = "";
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             $error = "This email is already registered.";
 
-        }
+        }else{
 
             $stmt = $connection->prepare(
                 "INSERT INTO user
@@ -71,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             $stmt->close();
         }
+    }
 
         $check->close();
     
@@ -114,8 +115,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             margin-left: 80px;
         }
 
-        /* HEADER */
-
         .page-header {
             margin-bottom: 25px;
         }
@@ -130,9 +129,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             color: #64748b;
             font-size: 14px;
         }
-
-        /* CARD */
-
         .form-card {
             max-width: 850px;
             background: white;

@@ -124,12 +124,12 @@ $approved_teachers = mysqli_fetch_assoc($approved_result)['approved'];
     <?php } ?> -->
 
     <a class="edit-btn"
-       href="edit.php?id=<?php echo $row['id']; ?>">
+       href="edit_teachers.php?id=<?php echo $row['id']; ?>">
         <i class="fa-solid fa-pen"></i> Edit
     </a>
 
     <a class="delete-btn"
-       href="delete.php?id=<?php echo $row['id']; ?>"
+       href="delete_teachers.php?id=<?php echo $row['id']; ?>"
        onclick="return confirm('Are you sure you want to delete this student?');">
         <i class="fa-solid fa-trash"></i> Delete
     </a>

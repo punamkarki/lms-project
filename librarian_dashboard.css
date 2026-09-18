@@ -1,0 +1,436 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f8f8;
+    color: #172033;
+}
+
+
+
+   
+.librarian-page {
+    margin-left: 250px;
+    padding: 105px 40px 40px;
+    min-height: 100vh;
+    background: #f5f8f8;
+}
+
+
+
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.page-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000206;
+    margin-bottom: 7px;
+}
+
+.page-header p {
+    font-size: 14px;
+    color: #323334;
+}
+
+
+.stats-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: #126b63;
+    border-radius: 14px;
+    padding: 20px;
+    min-height: 110px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.stat-icon {
+    width: 50px;
+    height: 60px;
+    min-width: 45px;
+  
+    display: flex;
+    align-items: left;
+    justify-content: right;
+    margin-bottom: 35px;
+    color: #e4e8e8;
+
+   
+    font-size: 18px;
+}
+
+.stat-card h3 {
+    font-size: 15px;
+    font-weight:bold;
+    color: #080808;
+    margin-bottom: 6px;
+     align-items: left;
+    justify-content: right;
+margin-right: 30px;
+white-space: nowrap;
+}
+
+.stat-card h2 {
+    font-size: 26px;
+    color: #0a0b0b;
+    font-weight: 700;
+    margin-right: 50px;
+}
+
+
+
+.section-title {
+    margin-bottom: 15px;
+}
+
+.section-title h2 {
+    font-size: 20px;
+    color: #000206;
+}
+
+
+.quick-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.action-card {
+    background: #e9eceb;
+    border: 1px solid #cadaf9;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.0.5);
+    border-radius: 12px;
+
+    padding: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    text-decoration: none;
+    color: #172033;
+
+    transition: 0.2s ease;
+}
+
+.action-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+.action-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #e6f5ed;
+    color: #126b63;
+
+    font-size: 16px;
+}
+
+.action-card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #172033;
+}
+
+.action-card p {
+    font-size: 11px;
+    color: #141515;
+    line-height: 1.4;
+    margin-right: 20px;
+}
+
+.books-container {
+    width: 100%;
+    background: #ffffff;
+  
+    padding: 22px;
+
+    border-radius: 14px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+.books-header {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+.books-header h2 {
+    font-size: 19px;
+    font-weight: 600;
+    color: #000206;
+}
+
+.books-header a {
+    display: inline-block;
+
+    color: #126b63;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    padding: 7px 12px;
+
+    border-radius: 6px;
+}
+
+.books-header a:hover {
+    background: #e6f5ed;
+}
+
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 700px;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+}
+
+
+table thead th {
+    background: #f7faf9;
+
+    color: #172033;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    padding: 12px 10px;
+
+    text-align: left;
+
+    border-top: 1px solid #e1e6e5;
+    border: 1px solid #020202;
+
+    white-space: nowrap;
+}
+
+
+
+table tbody td {
+    padding: 12px 10px;
+
+    font-size: 12px;
+
+    color: #4b5563;
+
+    border: 1px solid #040404;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+table th:nth-child(1),
+table td:nth-child(1) {
+    width: 7%;
+}
+
+table th:nth-child(2),
+table td:nth-child(2) {
+    width: 23%;
+}
+
+table th:nth-child(3),
+table td:nth-child(3) {
+    width: 18%;
+}
+
+table th:nth-child(4),
+table td:nth-child(4) {
+    width: 17%;
+}
+
+table th:nth-child(5),
+table td:nth-child(5) {
+    width: 10%;
+    text-align: center;
+}
+
+table th:nth-child(6),
+table td:nth-child(6) {
+    width: 10%;
+    text-align: center;
+}
+
+table th:nth-child(7),
+table td:nth-child(7) {
+    width: 15%;
+}
+
+table tbody tr:hover {
+    background: #f8fbfa;
+}
+
+.status {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+.status.available {
+    background: #e6f5ed;
+    color: #16804a;
+}
+
+
+.status.issued {
+    background: #fff4dc;
+    color: #9a6700;
+}
+
+.status.overdue {
+    background: #fde8e8;
+    color: #c53030;
+}
+
+.status.returned {
+    background: #e6f5ed;
+    color: #16804a;
+}
+
+.empty-state {
+    text-align: center !important;
+    padding: 30px !important;
+    color: #777 !important;
+}
+
+
+@media (max-width: 1200px) {
+
+    .librarian-page {
+        margin-left: 250px;
+        padding: 100px 25px 35px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quick-actions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .librarian-page {
+        margin-left: 80px;
+        padding: 95px 20px 30px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-card h2 {
+        font-size: 22px;
+    }
+
+    .page-header h1 {
+        font-size: 24px;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .librarian-page {
+        margin-left: 0;
+        padding: 90px 15px 25px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header h1 {
+        font-size: 22px;
+    }
+
+    .books-container {
+        padding: 15px;
+    }
+
+    .books-header h2 {
+        font-size: 17px;
+    }
+
+    table {
+        min-width: 700px;
+    }
+}

@@ -57,6 +57,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 header("Location: admin_dashboard.php");
                 exit();
+            }
+                 elseif ($user['role'] === 'librarian') {
+
+                   header("Location: librarian_dashboard.php");
+                      exit();
+
 
             } elseif ($user['role'] == 'student') {
 

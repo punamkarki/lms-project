@@ -1,17 +1,21 @@
+
 <?php
-include 'database.php';
-$notification_sql = "SELECT COUNT(*) AS pending_count 
-                     FROM user 
-                     WHERE role IN ('student', 'teacher') 
+include "database.php";
+
+$pending_count = 0;
+
+$notification_sql = "SELECT COUNT(*) AS pending_count
+                     FROM user
+                     WHERE role IN ('student', 'teacher')
                      AND status = 'pending'";
 
 $notification_result = mysqli_query($connection, $notification_sql);
-$notification_data = mysqli_fetch_assoc($notification_result);
 
-$pending_count = $notification_data['pending_count'];
+if ($notification_result) {
+    $notification_data = mysqli_fetch_assoc($notification_result);
+    $pending_count = $notification_data['pending_count'];
+}
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,139 +25,192 @@ $pending_count = $notification_data['pending_count'];
      <link rel="stylesheet" href="admin_dashboard.css">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+</head>
 <body>
-        <header class="headers">
-     <div class="heads">
-      <div class="dashboard">
-       
-            <p>  <i class="fa-solid fa-bars"></i> Dashboard</p>
+    
+
+
+<header class="headers">
+
+    <div class="heads">
+
+        <div class="dashboard">
+
+            <p>
+                <i class="fa-solid fa-bars"></i>
+                Librarian
+            </p>
+
         </div>
-    <nav class="mains">
 
-    <div class="search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Search...">
+        <nav class="mains">
+
+            <div class="search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text" placeholder="Search...">
+
+            </div>
+
+            <div class="menus notification">
+
+                <a href="notifications.php">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                    <?php if ($pending_count > 0) { ?>
+
+                        <span class="notification-count">
+                            <?php echo $pending_count; ?>
+                        </span>
+
+                    <?php } ?>
+
+                </a>
+
+            </div>
+
+            <div class="menus">
+
+                <i class="fa-regular fa-circle-user"></i>
+
+            </div>
+
+            <a href="admin_logout.php" class="menus">
+                Logout
+            </a>
+
+        </nav>
+
     </div>
 
-    <!-- <div class="menus">
-        <i class="fa-solid fa-bell"></i>
-    </div> -->
-    <div class="menus notification">
-    <a href="notifications.php">
-         <i class="fa-solid fa-bell"></i>
+</header>
 
-        <?php if ($pending_count > 0) { ?>
-            <span class="notification-count">
-                <?php echo $pending_count; ?>
-            </span>
-        <?php } ?>
-    </a>
-</div>
 
-    <div class="menus">
-        <i class="fa-regular fa-circle-user"></i>
-    </div>
-
-    <a href="admin_logout.php" class="menus">Logout</a>
-
-</nav>
-     </div>
-    </header>
-  
-   
-    <div class="sidebar">
+<div class="sidebar">
 
     <div class="logo">
+
         <i class="fa-solid fa-book-open"></i>
+
         <span>LIBRARY</span>
+
     </div>
 
     <ul class="menu">
 
         <li>
-            <a href="admin_dashboard.php">
-      <i class="fa-solid fa-bars"></i>
+            <a href="librarian_dashboard.php">
+
+                <i class="fa-solid fa-bars"></i>
+
                 <span>Dashboard</span>
+
             </a>
         </li>
 
         <li>
-            <a href="books.php">
+            <a href="#">
+
                 <i class="fa-solid fa-book"></i>
+
                 <span>Books</span>
+
             </a>
         </li>
 
-      
         <li>
-            <a href="students.php">
+            <a href="#">
+
                 <i class="fa-solid fa-user-graduate"></i>
+
                 <span>Students</span>
-            </a>
-        </li>
-        <li>
-            <a href="teachers.php">
-                
-               <i class="fa-solid fa-person-chalkboard"></i>
-                <span>Teachers</span>
+
             </a>
         </li>
 
         <li>
-            <a href="#">
+            <a href="issue_book.php">
+
                 <i class="fa-solid fa-book-open-reader"></i>
+
                 <span>Issue Books</span>
+
             </a>
         </li>
 
         <li>
-            <a href="#">
+            <a href="return_book.php">
+
                 <i class="fa-solid fa-rotate-left"></i>
+
                 <span>Return Books</span>
+
             </a>
         </li>
 
         <li>
-            <a href="#">
+            <a href="overdue_books.php">
+
                 <i class="fa-solid fa-clock"></i>
+
                 <span>Overdue Books</span>
+
             </a>
         </li>
 
         <li>
             <a href="notice.php">
-               <i class="fa-solid fa-bullhorn"></i>
+
+                <i class="fa-solid fa-bullhorn"></i>
+
                 <span>Notice</span>
+
             </a>
         </li>
 
         <li>
-            <a href="#">
+            <a href="librarian_settings.php">
+
                 <i class="fa-solid fa-gear"></i>
+
                 <span>Settings</span>
+
             </a>
         </li>
 
     </ul>
 
     <div class="sidebar-bottom">
+
         <a href="#">
+
             <i class="fa-solid fa-circle-question"></i>
+
             <span>Need Help?</span>
+
         </a>
 
-    
     </div>
 
 </div>
+
+
 <script>
+
 let page = location.pathname.split('/').pop();
 
 document.querySelectorAll('.menu li a').forEach(a => {
-    if (a.getAttribute('href') == page)
+
+    if (a.getAttribute('href') == page) {
+
         a.parentElement.classList.add('active');
+
+    }
+
 });
+
 </script>
- 
 </body>
 </html>

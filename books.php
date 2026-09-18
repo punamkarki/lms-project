@@ -1,141 +1,147 @@
 
+<?php
+session_start();
+include 'database.php';
 
+$total_sql = "SELECT SUM(quantity) AS total FROM books";
+$total_result = mysqli_query($connection, $total_sql);
+$total_books = mysqli_fetch_assoc($total_result)['total'];
+
+$available_sql = "SELECT SUM(quantity) AS total FROM books";
+$available_result = mysqli_query($connection, $available_sql);
+$available_books = mysqli_fetch_assoc($available_result)['total'];
+
+$issued_books = $total_books - $available_books;
+
+// $overdue_books= Today > due_date;
+$sql = "SELECT * FROM books ORDER BY id DESC";
+$result = mysqli_query($connection, $sql);
+
+if (!$result) {
+    die("Error loading books: " . mysqli_error($connection));
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-     <link rel="stylesheet" href="books.css">
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Books | Admin Dashboard</title>
+    <link rel="stylesheet" href="books.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 <body>
-    <?php
-    include 'admin_head.php'
-    ?>
-<div class="stats">
 
-    <div class="stat-card">
-        <div class="stat-icon">
-            <i class="fa-solid fa-book"></i>
-        </div>
-     <div>
-            <p>Total Books</p>
-            <h2>1,250</h2>
-        </div>
-    </div>
-    <div class="stat-card">
-        <div class="stat-icon">
-            <i class="fa-solid fa-user-graduate"></i>
-        </div>
+<?php include 'admin_head.php'; ?>
+
+<main class="books-page">
+
+    <div class="page-header">
         <div>
-            <p>Returned Books</p>
-     <h2> 20</h2>
+            <h1>Books Overview</h1>
+            <p>View library book information and availability.</p>
         </div>
     </div>
+    <div class="stats-grid">
 
-    <div class="stat-card">
-        <div class="stat-icon">
-            <i class="fa-solid fa-person-chalkboard"></i>
+        <div class="stat-card">
+            <h3>Total Books</h3>
+            <h2><?= (int)$total_books; ?></h2>
         </div>
-        <div>
-            <p>Overdue Books</p>
-            <h2>20</h2>
+
+        <div class="stat-card">
+            <h3>Available Books</h3>
+            <h2><?= (int)$available_books; ?></h2>
         </div>
-    </div>
 
-    <div class="stat-card">
-        <div class="stat-icon">
-            <i class="fa-solid fa-book-open-reader"></i>
+        <div class="stat-card">
+            <h3>Issued Books</h3>
+            <h2><?= (int)$issued_books; ?></h2>
         </div>
-        <div>
-            <p>Issued Books</p>
-            <h2>85</h2>
-        </div>
-    </div>
-</div>
-
-    <div class="schedule-section">
-
-    <div class="section-header">
-            <h2>Book Issue Schedule</h2>
-            <p>View books provided to each faculty by day.</p>
-    </div>
-
-    <div class="schedule-table">
-
-        <table>
-
-            <thead>
-                <tr>
-                    <th>Day</th>
-                    <th>Faculty</th>
-                    <th>Book</th>
-                    <th>Quantity</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>Sunday</td>
-                    <td>BCA</td>
-                    <td>Database Management System</td>
-                    <td>20</td>
-                    <td>
-                        <span class="available">Available</span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Monday</td>
-                    <td>BBS</td>
-                    <td>Financial Accounting</td>
-                    <td>15</td>
-                    <td>
-                        <span class="available">Available</span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Tuesday</td>
-                    <td>BSc CSIT</td>
-                    <td>Programming in C</td>
-                    <td>18</td>
-                    <td>
-                        <span class="available">Available</span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Wednesday</td>
-                    <td>BCA</td>
-                    <td>Web Technology</td>
-                    <td>12</td>
-                    <td>
-                        <span class="available">Available</span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Thursday</td>
-                    <td>BBA</td>
-                    <td>Principles of Management</td>
-                    <td>10</td>
-                    <td>
-                        <span class="available">Available</span>
-                    </td>
-                </tr>
-
-            </tbody>
-
-        </table>
+         <!-- <div class="stat-card">
+            <h3>Overdue Books</h3>
+            <h2><?= (int)$overdue_books; ?></h2>
+        </div> -->
 
     </div>
 
-</div>
+ 
+    <section class="books-container">
+
+        <div class="section-header">
+            <h2>Book Records</h2>
+           
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Book Title</th>
+                        <th>Author</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Available</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                <?php if (mysqli_num_rows($result) > 0): ?>
+
+                    <?php while ($book = mysqli_fetch_assoc($result)): ?>
+
+                        <tr>
+                            <td><?= (int)$book['id']; ?></td>
+
+                            <td>
+                                <?= htmlspecialchars($book['title']); ?>
+                            </td>
+
+                            <td>
+                                <?= htmlspecialchars($book['author']); ?>
+                            </td>
+
+                            <td>
+                                <?= htmlspecialchars($book['category'] ?? 'N/A'); ?>
+                            </td>
+
+                           
+
+                            <td><?= (int)$book['quantity']; ?></td>
+
+                            <td><?= (int)$book['available_quantity']; ?></td>
+
+                            <td>
+                                <?php if ($book['available_quantity'] > 0): ?>
+                                    <span class="available">Available</span>
+                                <?php else: ?>
+                                    <span class="unavailable">Issued Out</span>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+
+                    <?php endwhile; ?>
+
+                <?php else: ?>
+
+                    <tr>
+                        <td colspan="8" class="empty-state">
+                            No books found.
+                        </td>
+                    </tr>
+
+                <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+</main>
 
 </body>
 </html>

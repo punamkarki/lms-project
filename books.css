@@ -1,154 +1,272 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html,
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100%;
-        overflow-x: hidden !important;
-    overscroll-behavior-x: none !important;
-}
-body {
-    min-height: 100vh;
     font-family: Arial, sans-serif;
-    background: #f7faf9;
+    background: #f5f8f8;
     color: #172033;
-    overflow-x: hidden;
-     overscroll-behavior-x: none;
 }
 
-a {
-    text-decoration: none;
+.books-page {
+    margin-left: 250px;
+    padding: 105px 40px 40px;
+    min-height: 100vh;
+    background: #f5f8f8;
 }
 
-.schedule-section {
+.page-header {
+    margin-bottom: 25px;
+}
 
+.page-header h1 {
+    margin: 0;
+    color: #000206;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.page-header p {
+    color: #323334;
+    font-size: 15px;
+    margin-top: 8px;
+    line-height: 1.5;
+    margin-right: 637px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
     background: white;
-    border-radius: 0px;
     padding: 25px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
-
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    min-height: 120px;
 }
 
+.stat-card h3 {
+    color: #030303;
+    font-size: 15px;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+}
+
+.stat-card h2 {
+    font-size: 30px;
+    color: #000105;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.books-container {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 10px;
+}
 .section-header {
-  text-align: left;
-   align-items: left;
-    margin-bottom: 20px;
-margin-right:100px ;
-  
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 18px 0;
+    color: #000206;
 }
 
 .section-header h2 {
-
-    font-size: 22px;
-    color: #172033;
-  
+    margin: 0;
+    font-size: 20px;
+    color: #000206;
+    line-height: 1.3;
 }
 
-.section-header p {
-    margin-top: 20px;
-    color: #126b63;
-    font-size: 14px;
-}
 
-.schedule-table {
-    width: 80%;
+
+.table-wrapper {
+    width: 100%;
     overflow-x: auto;
-    margin-left: 250px;
    
 }
 
-.schedule-table table {
+table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
 }
 
-.schedule-table th {
-    background: #f5f7f7;
-    color: #172033;
+
+th:nth-child(1),
+td:nth-child(1) {
+    width: 7%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+    width: 22%;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+    width: 18%;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+    width: 17%;
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+    width: 10%;
+}
+
+th:nth-child(6),
+td:nth-child(6) {
+    width: 10%;
+}
+
+th:nth-child(7),
+td:nth-child(7) {
+    width: 16%;
+}
+
+
+
+th {
+    background: #f7faf9;
+    color: #080808;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 10px;
     text-align: left;
-    padding: 14px;
-    font-size: 14px;
-    border-bottom: 1px solid #ddd;
-}
-
-.schedule-table td {
-    padding: 14px;
-    font-size: 14px;
-    color: #333;
-    border-bottom: 1px solid #eee;
+    border: 1px solid #000609;
+    white-space: nowrap;
+    height: 42px;
+    vertical-align: middle;
 }
 
 
-.schedule-table tr:hover {
-    background: #fafafa;
+
+td {
+    color: #030303;
+    font-size: 13px;
+    padding: 11px 10px;
+    text-align: left;
+    border: 1px solid #000609;
+    white-space: nowrap;
+    height: 42px;
+    vertical-align: middle;
+}
+
+
+
+td,
+th {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+tbody tr:hover {
+    background: #f8fbfa;
+}
+
+
+
+.available,
+.unavailable {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 15px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
 }
 
 .available {
-    background: #e8f6ef;
-    color: #198754;
-    padding: 5px 10px;
-    border-radius: 5px;
+    background: #e6f5ed;
+    color: #16804a;
     font-size: 12px;
-    font-weight: 600;
 }
-.stats{
-    display: flex;
-    align-items: center;   
-    gap: 20px; 
-    margin-left: 100px;
-    margin-bottom: 100px;
-    position: relative;
-    margin:120px 0px 20px 100px;
+
+.unavailable {
+    background: #fde8e8;
+    color: #c53030;
 }
-.stat-card{
-    width: 200px;
-    height: 100px;
-    background: #126b63;
-    border-radius: 10px;
-    padding: 15px;
-    color: white;
-    margin-right: 20px;
-    text-align: center;
-    justify-content: center;
-}
-.stat-icon{
-height: 40px;
-width: 40px;    
-align-items:center;
-justify-content:center;
- margin-right: 20px;
- text-align: center;
 
 
 
+.empty-state {
+    text-align: center !important;
+    padding: 30px !important;
+    color: #4b5563;
 }
-.stat-icon i{
-    font-size: 20px;
-    color: white;
-    text-align: center;
-    align-items:center;
-justify-content:center;
-margin-left: 70px;
-    margin-top: 5px;
-}
-p{
-    font-size: 14px;
-    color: white;
-    text-align: center;
-    align-items:center;
 
-}
-h2{
-    font-size: 20px;
-    color: white;
-    text-align: center;
-    align-items:center;
 
+
+@media (max-width: 1000px) {
+
+    .books-page {
+        margin-left: 80px;
+        padding: 100px 25px 30px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 20px;
+    }
+
+    .stat-card h2 {
+        font-size: 26px;
+    }
+
+    .books-container {
+        padding: 20px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .books-page {
+        margin-left: 0;
+        width: 100%;
+        padding: 90px 15px 25px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .books-container {
+        padding: 15px;
+    }
+
+    .page-header h1 {
+        font-size: 24px;
+    }
+
+    .section-header h2 {
+        font-size: 18px;
+    }
+
+    table {
+        min-width: 800px;
+    }
 }
