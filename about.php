@@ -352,7 +352,7 @@ include "header.php"
 
     
 
-   <section class="about-section">
+   <section class="about-section" id="about">
 
         <div class="about-container">
 
@@ -395,8 +395,6 @@ include "header.php"
 
                 </div>
 
-
-                <!-- RIGHT SIDE -->
 
                 <div class="purpose-box">
 
